@@ -1,0 +1,24 @@
+# if else - compare two characters
+# Use a clever memory trick with halt flag
+
+A<I         # read first char
+B<I         # read second char
+
+# Store 1 at position A
+[A]<1
+
+# Check if mem[B] is 1
+C<[B]       # C = mem[B]
+
+# If C == 1, output '1', else output '0'
+# We'll use C as an index
+# mem[0] = 48 ('0')
+# mem[1] = 49 ('1')
+
+[0]<48
+[1]<49
+
+D<[C]       # D = mem[C] - will be 48 or 49
+O<D         # output
+
+Z<1         # halt

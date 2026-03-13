@@ -1,0 +1,7 @@
+# echo - copy input to output until we get 0
+
+[0]<1       # mem[0] = 1 (halt flag for end of input)
+
+A<I         # read a byte
+Z<[A]       # if A == 0, Z = mem[0] = 1 (halt), else Z = mem[A] = 0 (continue)
+O<A         # output the byte (only if we didn't halt)
