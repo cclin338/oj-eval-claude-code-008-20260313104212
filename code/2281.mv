@@ -1,0 +1,61 @@
+# A+B - add two 10-digit numbers
+
+# Read first number (10 digits) into mem[0..9]
+[100]<0    # counter
+A<I
+[0]<A
+A<I
+[1]<A
+A<I
+[2]<A
+A<I
+[3]<A
+A<I
+[4]<A
+A<I
+[5]<A
+A<I
+[6]<A
+A<I
+[7]<A
+A<I
+[8]<A
+A<I
+[9]<A
+
+# Read '+' and discard
+A<I
+
+# Read second number into mem[10..19]
+A<I
+[10]<A
+A<I
+[11]<A
+A<I
+[12]<A
+A<I
+[13]<A
+A<I
+[14]<A
+A<I
+[15]<A
+A<I
+[16]<A
+A<I
+[17]<A
+A<I
+[18]<A
+A<I
+[19]<A
+
+# Now add digit by digit from right to left
+# mem[20..30] = result digits
+# mem[50] = carry
+
+[50]<0     # carry = 0
+
+# Process digit 9 (rightmost)
+A<[9]
+A<48       # A -= 48 (convert from ASCII) - wait, can't subtract!
+# Use lookup table to convert ASCII to value
+
