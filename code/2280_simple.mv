@@ -1,0 +1,27 @@
+# printf - simpler approach using division
+# Compute digits iteratively
+
+A<I
+
+# Initialize lookup tables for comparison
+# mem[450..509] = flags for >= 100, >=10
+
+# For 100-255: output 3 digits
+# For 10-99: output 2 digits
+# For 0-9: output 1 digit
+
+# Use repeated subtraction with state machine
+
+# State in mem[400]: 0=init, 1=hundreds, 2=tens, 3=ones, 4=done
+[400]<0
+[401]<A    # working value
+[402]<48   # hundreds digit (starts at '0')
+[403]<48   # tens digit
+[404]<48   # ones digit
+
+# Compute hundreds: subtract 100 while >= 100
+B<[401]    # B = working
+C<100      # threshold
+
+# Need conditional: if B >= C, subtract
+# Use lookup: mem[100..255] = 1, mem[0..99] = 0
