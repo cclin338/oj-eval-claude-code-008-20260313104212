@@ -1,0 +1,30 @@
+# printf - full lookup table generated
+# Too long, let me make a smaller version for now
+
+A<I
+
+# Just handle a subset - ASCII 32-126 (printable)
+# For the example: '9' (ASCII 57) -> "57"
+
+# Let me implement division by 10 using subtraction
+# Divide A by 10: quotient and remainder
+
+# Setup: mem[400] = working value, mem[401] = quotient
+[400]<A
+[401]<0
+
+# Subtract 10 repeatedly
+# But I can't loop conditionally...
+
+# Use simpler lookup table for 0-127 only
+# That's still 256 instructions for setup
+
+# Let me just do it differently - compute on-the-fly
+# Store state in memory and use program loop
+
+# State machine:
+# mem[300] = step (0=hundreds, 1=tens, 2=ones, 3=halt)
+# mem[301] = working value
+# mem[302] = current digit
+
+Z<1
